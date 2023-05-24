@@ -15,3 +15,4 @@ select TXNMONTH,AVG(TXNAMOUNT) from amazon1 group by rollup(TXNMONTH) order by A
 select DEPT,max(TXNAMOUNT) from amazon1 group by dept rollup(TXNMONTH) order by AVG(TXNAMOUNT)
 with CTE as(select subject,semester,MAx(MArks) as MMARKS from sTUD group by subject,semester)select * from sTUD where (subject,semester,MARKS) in(select subject,semester,MMARKS from CTE) order by ID
 select substr(ID,1,1)||substr(dept,1,2)||length(dept) from emp 
+-----------------------------------END--------------------------------------------------
